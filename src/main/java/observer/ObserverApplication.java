@@ -17,6 +17,5 @@ public class ObserverApplication {
         System.out.println(expresso.getNews());
         System.out.println(skyNews.getNews());
 
-
     }
 }
