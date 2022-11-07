@@ -1,6 +1,7 @@
 package decorator;
 
 import decorator.decorators.Lights;
+import decorator.decorators.Snow;
 
 public class DecoratorApp {
 
@@ -10,5 +11,7 @@ public class DecoratorApp {
         ChristmasTree christmasTree1 = new ChristmasTreeImpl();
         Lights lights = new Lights(christmasTree1);
         System.out.println(lights.decorate());
+        Snow snow = new Snow(lights);
+        System.out.println(snow.decorate());
     }
 }
