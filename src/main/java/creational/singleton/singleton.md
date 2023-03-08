@@ -1,30 +1,27 @@
-### Singleton ###
+# Singleton #
 
-Guarantees only one instance is created. Commonly used in Runtime, Logger, Spring Beans, and Graphic Managers.
+Ensure that a class has only one instance while providing a global access point to this instance.
 
-**Concepts**
+## **Solves**
 
-- Class is responsible for lifecycle
-- Thread Safe
-- Private Instance
-- Private Constructor
-- No parameters are required for construction
+### Ensure that a class has only one instance.
 
-**Pitfalls**
+Instead of receiving a fresh object, you’ll get the one you already created.
 
-- Overused
-- Difficult to unit test
-- If not careful, not thread-safe
-- If has parameters, use a factory
+### Provide a global access point to that instance
 
-**Contrast vs Factory**
+Access some object from anywhere in the program, but protects that instance from being overwritten.
 
-- Returns same instance, while factory returns various
-- No interface, while Factory is interface driven
-- Factrory is adaptable to environment more easily
+## Applicability
 
-**Use When a Class**
+**When a class in your program should have just a single instance available to all clients;** for example, a single database object shared by different parts of the program.
 
-- controls concurrent access to a shared resource.
-- access to the resource will be requested from multiple, disparate parts of the system.
-- there can be only one object.
+**When you need stricter control over global variables.**
+
+## Solution
+
+Make the default constructor private.
+
+Static creation method that acts as a constructor.
+
+If the instance is null create a new instance, if not null returns the instance.
